@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Your Online Store</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="/product.html">Products</a></li>
+                <li><a href="/category.html">Categories</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon">
+                    <a href="/js/addToCart.html">
+                        <i class="fas fa-shopping-cart cart"></i>
+                    </a>
+                    <span class="cart-count">0</span>
+                    <!-- Cart Preview -->
+
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                    <!-- User Menu -->
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Quick View Modal -->
+    
+
+    <!-- Checkout Modal -->
+    
+    </div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="home">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <!-- Slide 1 -->
+                <div class="slide" data-product-id="1">
+                    <img src="/images/slider1.jpg" alt="New Collection">
+                    <div class="slide-content">
+                        <h2>New Summer Collection</h2>
+                        <p>Up to 40% off on selected items</p>
+                        <div class="slide-buttons">
+                            <a href="#products" class="shop-now-btn">Shop Now</a>
+                            <button class="quick-view-btn" onclick="openProductModal(1)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide" data-product-id="2">
+                    <img src="images/washing-machine-1.jpg" alt="Electronics Sale">
+                    <div class="slide-content">
+                        <h2>Premium Electronics</h2>
+                        <p>Latest gadgets at best prices</p>
+                        <div class="slide-buttons">
+                            <a href="#products" class="shop-now-btn">Explore Now</a>
+                            <button class="quick-view-btn" onclick="openProductModal(2)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide" data-product-id="3">
+                    <img src="images/slide3.jpg" alt="Fashion Deals">
+                    <div class="slide-content">
+                        <h2>Laptops</h2>
+                        <p>Discover the latest laptops</p>
+                        <div class="slide-buttons">
+                            <a href="#products" class="shop-now-btn">View Collection</a>
+                            <button class="quick-view-btn" onclick="openProductModal(3)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <button class="slider-nav prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <button class="dot active" aria-label="Go to slide 1"></button>
+                <button class="dot" aria-label="Go to slide 2"></button>
+                <button class="dot" aria-label="Go to slide 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotion Scroll Section -->
+    <section class="promo-scroll">
+        <h2>Hot Deals</h2>
+        <div class="scroll-container">
+            <div class="scroll-content">
+                <!-- Promotion items will be repeated for continuous scroll -->
+                <div class="promo-item" data-product-id="4">
+                    <div class="promo-image">
+                        <img src="images/apple-haadphone.png" alt="Special Offer 1">
+                        <button class="quick-view-btn" onclick="openProductModal(4)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Premium Headphones</h3>
+                        <p class="promo-price">$7999</p>
+                        <!-- <span class="discount-tag">-20%</span> -->
+                    </div>
+                </div>
+                <div class="promo-item" data-product-id="5">
+                    <div class="promo-image">
+                        <img src="images/smart watch pro.jpg" alt="Special Offer 2">
+                        <button class="quick-view-btn" onclick="openProductModal(5)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Smart Watch Pro</h3>
+                        <p class="promo-price">$1499</p>
+                        <!-- <span class="discount-tag">-30%</span> -->
+                    </div>
+                </div>
+                <div class="promo-item" data-product-id="6">
+                    <div class="promo-image">
+                        <img src="images/buds.jpg" alt="Special Offer 3">
+                        <button class="quick-view-btn" onclick="openProductModal(6)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Wireless Earbuds</h3>
+                        <p class="promo-price">$899</p>
+                        <!-- <span class="discount-tag">-25%</span> -->
+                    </div>
+                </div>
+                <!-- Duplicate items for continuous scroll with different IDs -->
+                <div class="promo-item" data-product-id="4">
+                    <div class="promo-image">
+                        <img src="images/boat-headphone.jpeg" alt="Special Offer 1">
+                        <button class="quick-view-btn" onclick="openProductModal(4)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Premium Headphones</h3>
+                        <p class="promo-price">$1299</p>
+                        <!-- <span class="discount-tag">-20%</span> -->
+                    </div>
+                </div>
+                <div class="promo-item" data-product-id="5">
+                    <div class="promo-image">
+                        <img src="images/smart-watch2.jpg" alt="Special Offer 2">
+                        <button class="quick-view-btn" onclick="openProductModal(5)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Smart Watch Pro</h3>
+                        <p class="promo-price">$1499</p>
+                        <!-- <span class="discount-tag">-30%</span> -->
+                    </div>
+                </div>
+                <div class="promo-item" data-product-id="6">
+                    <div class="promo-image">
+                        <img src="images/buds2.jpg" alt="Special Offer 3">
+                        <button class="quick-view-btn" onclick="openProductModal(6)">
+                            <a href="/product.html">
+                                <i class="fas fa-eye"></i> Quick View
+                            </a>
+                        </button>
+                    </div>
+                    <div class="promo-info">
+                        <h3>Wireless Earbuds</h3>
+                        <p class="promo-price">$8999</p>
+                        <!-- <span class="discount-tag">-25%</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- featured-section  -->
+    <div class="section-header" id="products">
+        <h2>Featured-Products</h2>
+        <p>Browse our wide selection of products in our site</p>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="/images/iPhone 16.jpg" alt="Image 1" class="card-img">
+            <h3 class="card-title">IPhone 16</h3>
+            <p class="card-description">The best user-expericence in our hand.</p>
+            <p class="p2-card"> <strong>Rs-69,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/ipad.jpg" alt="Image 2" class="card-img">
+            <h3 class="card-title">IPad 4</h3>
+            <p class="card-description">The best tablet for your daily work and entertainment.</p>
+            <p class="p2-card"> <strong>Rs-89,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="images/S24 Ultra.jpg" alt="Image 3" class="card-img">
+            <h3 class="card-title">Samsung S24 ultra</h3>
+            <p class="card-description">The fastest android mobile phone in our hand.</p>
+            <p class="p2-card"> <strong>Rs-1,29,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/apple-haadphone.png" alt="Image 4" class="card-img">
+            <h3 class="card-title">Apple headphone</h3>
+            <p class="card-description">The premium sound quality and looks.</p>
+            <p class="p2-card"> <strong>Rs-39,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/watch.jpg" alt="Image 5" class="card-img">
+            <h3 class="card-title">Current Watch</h3>
+            <p class="card-description">The stylish watch to wear on dailyu life.</p>
+            <p class="p2-card"> <strong>Rs-9,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/bag.jpg" alt="Image 6" class="card-img">
+            <h3 class="card-title">Tommy Hillfiger</h3>
+            <p class="card-description">The modern hand bag to carry outside .</p>
+            <p class="p2-card"> <strong>Rs-8,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="images/boat-headphone.jpeg" alt="Image 7" class="card-img">
+            <h3 class="card-title">BoAt Headphones </h3>
+            <p class="card-description">The best beats and bass to hear with boAt Headphones.</p>
+            <p class="p2-card"> <strong>Rs-3,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/buds.jpg" alt="Image 8" class="card-img">
+            <h3 class="card-title">Realme Buds</h3>
+            <p class="card-description">The branded and trusted buds in the world.</p>
+            <p class="p2-card"> <strong>Rs-4,500</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/jacket.jpg" alt="Image 5" class="card-img">
+            <h3 class="card-title">Gucci-Jacket</h3>
+            <p class="card-description">The premiumjacket to wear in your outfit.</p>
+            <p class="p2-card"> <strong>Rs-1,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/products/perfume-1.jpeg" alt="Image 6" class="card-img">
+            <h3 class="card-title">Gucci Chanel</h3>
+            <p class="card-description">The coolest perfume to apply on events.</p>
+            <p class="p2-card"> <strong>Rs-1,199</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/shirt.jpg" alt="Image 7" class="card-img">
+            <h3 class="card-title">Arrow-shirt</h3>
+            <p class="card-description">The stylish formal shirt on daily schedule.</p>
+            <p class="p2-card"> <strong>Rs-1,499</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+        <div class="card">
+            <img src="/images/shoe.jpg" alt="Image 8" class="card-img">
+            <h3 class="card-title">Puma Shoe</h3>
+            <p class="card-description">The comfodable shoes to wear on daily life.</p>
+            <p class="p2-card"> <strong>Rs-9,000</strong></p>
+            <button class="card-button" onclick="addToCart(1)">Add to cart</button>
+            <a href="/product.html"><button class="card-button">view more</button></a>
+        </div>
+    </div>
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <h2>Shop by Category</h2>
+            <p>Browse our wide selection of products by category</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/washing-machine-1.jpg" alt="Electronics">
+                    <div class="category-overlay">
+                        <span class="item-count">150+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Electronics</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Electronics</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/slider1.jpg" alt="Fashion">
+                    <div class="category-overlay">
+                        <span class="item-count">200+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Fashion</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Fashion</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Men's Wear</a></li>
+                        <li><a href="#">Women's Wear</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/Samsung launch first QLED TV IN INDIA..jpg" alt="Home & Living">
+                    <div class="category-overlay">
+                        <span class="item-count">180+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Home</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Living-Hall Accessories</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Decor</a></li>
+                        <li><a href="#">Kitchen</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/sports&fitness.jpg" alt="Sports">
+                    <div class="category-overlay">
+                        <span class="item-count">120+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Sports</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Sports & Fitness</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Equipment</a></li>
+                        <li><a href="#">Clothing</a></li>
+                        <li><a href="#">Supplements</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/books.jpg" alt="Books">
+                    <div class="category-overlay">
+                        <span class="item-count">300+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Books</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Books</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Non-Fiction</a></li>
+                        <li><a href="#">Educational</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/beauty.jpg" alt="Beauty">
+                    <div class="category-overlay">
+                        <span class="item-count">160+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Beauty</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Beauty & Health</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/perfume.jpg" alt="Beauty">
+                    <div class="category-overlay">
+                        <span class="item-count">160+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Beauty</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Perfume's</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="images/forniture.jpg" alt="Beauty">
+                    <div class="category-overlay">
+                        <span class="item-count">160+ Items</span>
+                        <a href="/product.html" class="explore-btn">Explore Beauty</a>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <h3>Furniture</h3>
+                    <ul class="subcategories">
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Our commitment to quality, customer satisfaction, and innovative shopping solutions has helped us
+                    become one of the leading online retailers in the industry.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/product.html">Products</a></li>
+                    <li><a href="/category.html">Categories</a></li>
+                    <li><a href="/about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: afreed@Gmail.com</p>
+                <p>Phone: 6369140862</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="/js/script2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-us</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Navigation Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            /* Add standard property for better browser support */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            height: 280px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+                url('../images/about-hero.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            /* margin-bottom: 1rem; */
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 4rem 0;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-text h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Our Values Section */
+        .our-values {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .our-team {
+            padding: 4rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #7f8c8d;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+        /* Section Headers */
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .value-card,
+            .team-member {
+                padding: 1rem;
+            }
+
+            .team-member img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/product.html">Products</a></li>
+                <li><a href="/category.html">Categories</a></li>
+                <li><a class="active" href="/about.html">About</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon">
+                    <a href="/js/addToCart.html">
+                        <i class="fas fa-shopping-cart cart"></i>
+                    </a>
+                    <!-- Cart Preview -->
+                    
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                    <!-- User Menu -->
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Quick View Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="" alt="Product Image" id="modalMainImage">
+                    </div>
+                    <div class="thumbnail-list">
+                        <!-- Thumbnails will be added dynamically -->
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title"></h2>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <div class="stars"></div>
+                            <span class="review-count"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price"></span>
+                            <span class="original-price"></span>
+                            <span class="discount-badge"></span>
+                        </div>
+                    </div>
+                    <div class="product-description">
+                        <!-- Description will be added dynamically -->
+                    </div>
+                    <div class="product-variants">
+                        <div class="size-selector">
+                            <h4>Select Size</h4>
+                            <div class="size-options">
+                                <!-- Size options will be added dynamically -->
+                            </div>
+                        </div>
+                        <div class="color-selector">
+                            <h4>Select Color</h4>
+                            <div class="color-options">
+                                <!-- Color options will be added dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                            Add to Wishlist
+                        </button>
+                    </div>
+                    <div class="product-info-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="description">Description</button>
+                            <button class="tab-btn" data-tab="specifications">Specifications</button>
+                            <button class="tab-btn" data-tab="reviews">Reviews</button>
+                        </div>
+                        <div class="tab-content">
+                            <!-- Tab content will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <h2>Checkout</h2>
+                <div class="checkout-progress">
+                    <div class="progress-step active" data-step="shipping">
+                        <span class="step-number">1</span>
+                        <span class="step-name">Shipping</span>
+                    </div>
+                    <div class="progress-step" data-step="payment">
+                        <span class="step-number">2</span>
+                        <span class="step-name">Payment</span>
+                    </div>
+                    <div class="progress-step" data-step="review">
+                        <span class="step-number">3</span>
+                        <span class="step-name">Review</span>
+                    </div>
+                </div>
+                <div class="checkout-grid">
+                    <!-- Shipping Information -->
+                   
+
+                    <!-- Payment Information -->
+                    <div class="checkout-section payment-section" id="paymentSection">
+                        <h3>Payment Information</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method-selector">
+                                <button class="payment-method-btn active" data-method="card">
+                                    <i class="fas fa-credit-card"></i> Credit Card
+                                </button>
+                                <button class="payment-method-btn" data-method="paypal">
+                                    <i class="fab fa-paypal"></i> PayPal
+                                </button>
+                                <button class="payment-method-btn" data-method="apple">
+                                    <i class="fab fa-apple"></i> Apple Pay
+                                </button>
+                            </div>
+                            <form id="paymentForm" class="checkout-form">
+                                <div class="payment-form card-form active">
+                                    <div class="form-group">
+                                        <label for="cardName">Name on Card</label>
+                                        <input type="text" id="cardName" required>
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number</label>
+                                        <div class="card-input-wrapper">
+                                            <input type="text" id="cardNumber" required pattern="[0-9]{16}">
+                                            <div class="card-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </div>
+                                        </div>
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Expiry Date</label>
+                                            <input type="text" id="expiry" placeholder="MM/YY" required>
+                                            <span class="error-message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" required pattern="[0-9]{3,4}">
+                                            <span class="error-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-form paypal-form">
+                                    <div class="paypal-info">
+                                        <i class="fab fa-paypal"></i>
+                                        <p>You will be redirected to PayPal to complete your payment.</p>
+                                    </div>
+                                </div>
+                                <div class="payment-form apple-form">
+                                    <div class="apple-pay-info">
+                                        <i class="fab fa-apple"></i>
+                                        <p>Complete your purchase with Apple Pay.</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="checkout-section order-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-items">
+                            <!-- Items will be dynamically added here -->
+                        </div>
+                        <div class="coupon-section">
+                            <div class="coupon-input">
+                                <input type="text" id="couponCode" placeholder="Enter coupon code">
+                                <button class="apply-coupon">Apply</button>
+                            </div>
+                            <span class="coupon-message"></span>
+                        </div>
+                        <div class="summary-totals">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal-amount">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span class="shipping-amount">FREE</span>
+                            </div>
+                            <div class="summary-row discount hidden">
+                                <span>Discount</span>
+                                <span class="discount-amount">-$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span class="tax-amount">$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span class="total-amount">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="checkout-actions">
+                            <button class="back-btn" style="display: none;">Back</button>
+                            <button class="next-btn">Continue to Payment</button>
+                            <button class="place-order-btn" style="display: none;">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About ShopEase</h1>
+            <p>Your Trusted Shopping Destination</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="images/about-us.jpeg" alt="Our Story">
+                </div>
+                <div class="story-text">
+                    <h3>How We Started</h3>
+                    <p>Founded in 2020, ShopEase began with a simple mission: to make online shopping easier and more
+                        enjoyable for everyone. What started as a small startup has grown into a trusted e-commerce
+                        platform serving thousands of customers.</p>
+                    <p>Our commitment to quality, customer satisfaction, and innovative shopping solutions has helped us
+                        become one of the leading online retailers in the industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Customer First</h3>
+                    <p>We prioritize our customers' needs and satisfaction in everything we do.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality</h3>
+                    <p>We ensure all our products meet the highest quality standards.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Trust</h3>
+                    <p>Building and maintaining trust with our customers is our top priority.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Innovation</h3>
+                    <p>We continuously improve our services to enhance your shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/CEO-pic.jpeg" alt="Team Member 1">
+                    <h3>Mohd Afreed</h3>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/admin-1.jpeg" alt="Team Member 2">
+                    <h3>Zaid Asim</h3>
+                    <p>Head of Operations</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/admin-2.jpeg" alt="Team Member 3">
+                    <h3>Faizan Zain</h3>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Shopping Street,Perimet,Chennai.
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91-6369140862
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fasfa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>afreed.shopecase.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
