@@ -230,11 +230,13 @@ font-size: medium;
             justify-content: center;
             gap: 20px;
             padding: 20px;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
 }
 
 .card {
+    min-width: 250px;
+    max-width: 300px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
