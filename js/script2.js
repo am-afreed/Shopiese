@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgSrc: card.querySelector(".card-img").src,
                 title: card.querySelector(".card-title").textContent,
                 description: card.querySelector(".card-description").textContent,
-                price: Math.floor(Math.random() * 200) + 50 // Mock price between 50-250
+                price: Math.floor(Math.random() * 15000) + 5000 // Mock price between 50-250
             };
 
             cart.push(item);
@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(`${item.title} added to cart! 🛒`);
         });
     });
+    document.querySelectorAll('.card-button').forEach(element => {
+        element.innerHTML = element.innerHTML.replace('$', '₹');
+      });
+      
 
     // Cart Page Functionality
     if (document.getElementById("cart-items")) {
@@ -41,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="${item.imgSrc}" alt="${item.title}">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
-                    <p>$${item.price}</p>
+                    <p>₹${item.price}</p>
                     <button class="remove-btn" data-index="${index}">Remove</button>
                 `;
 
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 totalPrice += item.price;
             });
 
-            cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
+            cartTotal.textContent = `₹${totalPrice.toFixed(2)}`;
             attachRemoveEvent();
         };
 
